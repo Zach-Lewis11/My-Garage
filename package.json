@@ -1,0 +1,21 @@
+{
+  "name": "my-garage",
+  "version": "1.0.0",
+  "description": "A website to track the cars you own and see what other users have",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Zach-Lewis11/My-Garage.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Zach-Lewis11/My-Garage/issues"
+  },
+  "homepage": "https://github.com/Zach-Lewis11/My-Garage#readme"
+}
