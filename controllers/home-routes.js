@@ -3,27 +3,31 @@ const { User, Cars } = require('../models');
 
 // GET all users for homepage
 router.get('/', async (req, res) => {
-  try {
-    const dbUserData = await User.findAll({
-      include: [
-        {
-          model: Cars,
-          attributes: ['filename', 'description'],
-        },
-      ],
-    });
+  if (!req.session.loggedIn) {
+    res.redirect('/login');
+  } else {
+    try {
+      const dbUserData = await User.findAll({
+        include: [
+          {
+            model: Cars,
+            attributes: ['id', 'make', 'model', 'year'],
+          },
+        ],
+      });
 
-    const users = dbUserData.map((user) =>
-      user.get({ plain: true })
-    );
+      const users = dbUserData.map((user) =>
+        user.get({ plain: true })
+      );
 
-    res.render('homepage', {
-      users,
-      loggedIn: req.session.loggedIn,
-    });
-  } catch (err) {
-    console.log(err);
-    res.status(500).json(err);
+      res.render('homepage', {
+        users,
+        loggedIn: req.session.loggedIn,
+      });
+    } catch (err) {
+      console.log(err);
+      res.status(500).json(err);
+    }
   }
 });
 
