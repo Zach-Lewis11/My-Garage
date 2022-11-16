@@ -33,11 +33,9 @@ router.get('/', async (req, res) => {
 
 // GET one user
 router.get('/user/:id', async (req, res) => {
-  // If the user is not logged in, redirect the user to the login page
   if (!req.session.loggedIn) {
     res.redirect('/login');
   } else {
-    // If the user is logged in, allow them to view the gallery
     try {
       const dbUserData = await User.findByPk(req.params.id, {
         include: [
@@ -63,15 +61,13 @@ router.get('/user/:id', async (req, res) => {
 
 // GET one car
 router.get('/car/:id', async (req, res) => {
-  // If the user is not logged in, redirect the user to the login page
   if (!req.session.loggedIn) {
     res.redirect('/login');
   } else {
-    // If the user is logged in, allow them to view the painting
     try {
       const dbCarsData = await C.findByPk(req.params.id);
 
-      const car = dbPaintingData.get({ plain: true });
+      const car = dbCarsData.get({ plain: true });
 
       res.render('car', { car, loggedIn: req.session.loggedIn });
     } catch (err) {
