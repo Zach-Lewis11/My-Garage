@@ -7,7 +7,7 @@ const addCarFormHandler = async (event) => {
     const user_id = document.querySelector('#add-user_id').value.trim();
   
     if (make && model && year && user_id) {
-      const response = await fetch('/api/cars', {
+      const response = await fetch('/api/cars/car', {
         method: 'POST',
         body: JSON.stringify({ make, model, year, user_id }),
         headers: { 'Content-Type': 'application/json' },
