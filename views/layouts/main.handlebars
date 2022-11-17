@@ -9,17 +9,17 @@
   <link rel="stylesheet" type="text/css" href="/css/style.css">
 </head>
 
-<body>
-  <header>
+<body class="m-4">
+  <header class="align-self-center">
     <h1>Welcome to Garage</h1>
     <h3>A place to share your car collection</h3>
   </header>
   <nav>
-    <a href="/">Home</a>
+    <a class="nav-link" href="/">Home</a>
     {{#if loggedIn}}
     <button id="logout" class="btn">Logout</button>
     {{else}}
-    <a href="/login">Login</a>
+    <a class="nav-link" href="/login">Login</a>
     {{/if}}
   </nav>
   <main>

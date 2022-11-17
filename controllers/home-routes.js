@@ -21,7 +21,7 @@ router.get('/', async (req, res) => {
       );
 
       res.render('homepage', {
-        users,
+        users: users,
         loggedIn: req.session.loggedIn,
       });
     } catch (err) {
@@ -74,6 +74,14 @@ router.get('/car/:id', async (req, res) => {
       console.log(err);
       res.status(500).json(err);
     }
+  }
+});
+
+router.get('/new/car', async (req, res) =>{
+  if (!req.session.loggedIn) {
+    res.redirect('/login', { loggedIn: req.session.loggedIn });
+  } else {
+    res.render('addCar')
   }
 });
 

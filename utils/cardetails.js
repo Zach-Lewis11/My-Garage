@@ -1,5 +1,5 @@
-const loc = require('list-of-cars')
- var fullList = loc.getListSync()
+// const loc = require('list-of-cars')
+//  var fullList = loc.getListSync()
 
 //  console.log(loc.getCarMakes());
 // // console.log(loc.getCarCategories());
@@ -7,8 +7,8 @@ const loc = require('list-of-cars')
 // // console.log(loc.getCarsByCategoryObj());
 
 
-function getMakes(){
-    var carMakes = loc.getCarMakes();
+function getMakes(carMakes){
+
     for (var i=0; i<carMakes.length; i++){
         var option = document.createElement("option");
         option.setAttribute("value", carMakes[i]);

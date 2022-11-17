@@ -1,17 +1,21 @@
 <form class="car-select">
-    <div>
+    <div class="form-group">
         <label for="make">Choose your car's make.</label>
         <select name="make" id="car-make"></select>
     </div>
-    <div>    
+    <div class="form-group">    
         <label for="model">Enter your car's model.</label>
         <input type="text" name="model" id="car-model"></input>
     </div>
-    <div>
+    <div class="form-group">
         <label for="year">Enter you car's year</label>
         <input type="text" name="year" id="car-year">
     </div>
-    <button type="submit" class="btn btn-primary add-btn">Submit</button>
+    <div class="form-group">
+        <label for="user-id">Enter the User ID of this car's owner</label>
+        <input type="text" name="user-id" id="car-user-id">
+    </div>
+    <button type="submit" class="btn btn-primary add-btn mt-3">Submit</button>
 </form>
 
-<script src="../utils/cardetails.js"></script>
+<script src="/js/cardetails.js"></script>
