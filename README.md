@@ -34,6 +34,8 @@ If you just wish to visit the site, no installation is required. However, if you
 
 ## Usage
 
+[Deployed Site](https://garage.herokuapp.com/)
+
 To start, navigate to the sites URL or to localhost:3001, once there you will need to either log in if you have an account or create a new account. Once logged in you should be able to see all users on the site. To view the cars each user has, simply click on their username and it will take you to their page.  
 
 ---
